@@ -15,4 +15,4 @@ class OpenAIModel(Model):
         初始化openai的大语言模型对象
         :return:
         """
-        model = ChatOpenAI(model=self.model_name,api_key=self.api_key,temperature=0)
+        return ChatOpenAI(model=self.model_name, api_key=self.api_key, temperature=0)
