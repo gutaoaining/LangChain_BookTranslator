@@ -9,8 +9,15 @@ class TranslatorChain:
     负责调用langchain来完成文本的翻译
     """
 
+    _instance = None
+
     def __init__(self, model: Model):
-        pass
+        self.langchain = model.make_prompt() | model.create_llm()
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(TranslatorChain, cls).__new__(cls)
+        return cls._instance
 
     def run(self, content: Content, source_language: str, target_language: str = '中文'):
         """
