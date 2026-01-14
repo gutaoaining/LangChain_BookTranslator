@@ -18,8 +18,6 @@ class ProjectConfig:
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super(ProjectConfig, cls).__new__(cls)
-            cls._instance._config = None
-            cls._instance._args = None
         return cls._instance
 
     def initialize(self):
@@ -48,8 +46,8 @@ class ProjectConfig:
     def __getattr__(self, item):
         # 当访问当前对象实例的属性是自动调用
         if self._config and item in self._config:
-            return self._config(item)
-        return AttributeError(f"项目中没有一个属性：{item}")
+            return self._config[item]
+        raise AttributeError(f"项目中没有一个属性：{item}")
 
 if __name__ == '__main__':
     o1 = ProjectConfig()

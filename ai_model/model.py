@@ -9,15 +9,12 @@ class Model:
     def create_llm(self):
         print('初始化大语言模型的对象')
 
-    def make_prompt(self, content: Content, source_language: str, target_language: str):
+    def make_prompt(self):
         """
         创建提示模版
-        :param content:
-        :param source_language:
-        :param target_language:
         :return:
         """
-        system_template = f""""你是一个翻译专家，精通各种人类语言。\n
+        system_template = """"你是一个翻译专家，精通各种人类语言。\n
         输入的是：{source_language}语言，翻译之后的语言为：{target_language}
         """
         system_message_prompt = SystemMessagePromptTemplate.from_template(system_template)
