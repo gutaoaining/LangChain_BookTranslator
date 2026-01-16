@@ -1,7 +1,7 @@
 model_name: "gpt-4o"
 input_file: "test/test.pdf"
 model_type: "OpenAIModel"
-api_key: ""
+api_key: " "
 file_format: "md"
 source_language: "English"
 target_language: "Japanese"
