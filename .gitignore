@@ -4,3 +4,4 @@ logs
 *.jpeg
 *.xls
 *.txt
+.env
