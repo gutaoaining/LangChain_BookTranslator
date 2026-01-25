@@ -1,6 +1,6 @@
-model_name: "gpt-4o"
+model_name: "models/gemini-2.5-flash"
 input_file: "test/test.pdf"
-model_type: "OpenAIModel"
+model_type: "GeminiAIModel"
 api_key: " "
 file_format: "md"
 source_language: "English"
