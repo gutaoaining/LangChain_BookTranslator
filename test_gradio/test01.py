@@ -19,11 +19,11 @@ def calculator(num1, operation, num2):
 
 instance = gr.Interface(
     fn=calculator,
-    input=[
+    inputs=[
         'number',
         gr.Radio(choices=['加', '减', '乘', '除'], label='计算法则'),
         'number'
     ],
     outputs='number'
 )
-instance.launch(server_name='0.0.0.0', server_port=8008, auth=('admin', '123456'))
+instance.launch()
